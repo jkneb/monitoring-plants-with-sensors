@@ -1,5 +1,5 @@
 {
-  "name": "Monitoring Plants With Sensors",
+  "name": "monitoring-plants-with-sensors-ember-app",
   "dependencies": {
     "ember": "1.13.6",
     "ember-cli-shims": "ember-cli/ember-cli-shims#0.0.3",
