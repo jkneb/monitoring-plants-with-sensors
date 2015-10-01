@@ -12,6 +12,7 @@ This little app is connected to the Arduino via the `serialport` node module. Wh
 ssh pi@192.168.1.23
 ```
 * `cd` into this directory
+* run `npm install`
 * run `node server.js`
 
 It should start to print the sensors data coming from the Arduino and POST to your API on the interval defined in the `postInterval` variable.
