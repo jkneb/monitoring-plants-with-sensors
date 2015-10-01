@@ -2,6 +2,8 @@
 
 This is the API app that I deployed to Heroku. It is connected to a PostgreSQL database which I activated also on Heroku. 
 
+First you'll problably need to configure your local development database url, do this in the `server.js` file at line 15.
+
 I provided some commands which I found useful to create/modify tables, rows, etc. Especially the last one if Heroku warns you that your quota is almost exceeded and that they will revoke your rights on the database ;)
 
 
