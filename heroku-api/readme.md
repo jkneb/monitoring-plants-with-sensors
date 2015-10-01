@@ -10,6 +10,7 @@ I provided some commands which I found useful to create/modify tables, rows, etc
 ## Installation
 
 * `cd` into this directory
+* run `npm install`
 * run `node server.js`
 
 ## Heroku Useful Commands
