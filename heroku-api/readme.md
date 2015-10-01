@@ -15,7 +15,9 @@ I provided some commands which I found useful to create/modify tables, rows, etc
 
 ## Heroku Useful Commands
 
-After `cd` into your app directory.
+First install Heroku's CLI which you should find here: [Heroku Toolbelt](https://toolbelt.heroku.com/).
+
+Then after `cd` into your app directory...
 
 #### Add a PostgreSQL database
 ```
