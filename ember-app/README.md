@@ -15,7 +15,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* cd into this directory
+* `cd` into this directory
 * `npm install`
 * `bower install`
 
@@ -28,8 +28,8 @@ You will need the following things properly installed on your computer.
 
 These steps needs to be configured in order to make the app actually work.
 
-* in `config/environment.js` go into the `contentSecurityPolicy` object and in `'connect-src'` add the other domains with which your app needs to communicate. For instance, in my case I added my production API url (an Heroku app) and also my local developmenet API URL which was http://localhost:5000/api/. 
-So mine was looking like this: 
+* in `config/environment.js` go into the `contentSecurityPolicy` object and in `'connect-src'` add the other domains with which your app needs to communicate. For instance, in my case I added my production API url (an Heroku app) and also my local development API URL which was http://localhost:5000/api/
+So, mine is looking like this: 
 ```
 ...
 'connect-src': "'self' http://localhost:5000/api/ http://my-heroku-api.herokuapp.com/api/"
