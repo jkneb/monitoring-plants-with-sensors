@@ -1,6 +1,8 @@
 # Ember.js App
 
-This is an Ember app.  
+This is an Ember app, which looks like this: 
+![](http://www.return-false.com/content/images/2015/10/plant-sensors-UI.jpg)
+
 Follow the instructions bellow for the installation.
 
 ## Prerequisites
