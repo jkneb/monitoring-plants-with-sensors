@@ -1,0 +1,31 @@
+{{line-chart data=filteredContent chartClassName="moistures-chart" unit="%"}}
+
+<div class="chart-data-title">
+  <div class="row">
+    <div class="col-xs-6">
+      {{current-value model=lastEntrie unit="%" title="Moisture"}}
+    </div>
+    <div class="col-xs-6 align-right">
+      {{svg-icon class="dashboard-icon icon-droplet"}}
+    </div>
+  </div>
+</div>
+
+<div class="chart-data-block">
+  <div class="chart-data-block-wraper">
+    {{#dashboard-table}}
+      <tbody>
+      {{#each tenLastFilteredContent as |moisture|}}
+        <tr>
+          <td>{{moisture.value}} %</td>
+          <td>{{format-date-twitter moisture.time}}</td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan="2">No data to display.</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    {{/dashboard-table}}
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<br/>
+<button class="btn btn-default btn-xs" {{action "changeRange" 0.04}}>1 hour</button> 
+<button class="btn btn-default btn-xs" {{action "changeRange" 0.125}}>3 hours</button> 
+<button class="btn btn-default btn-xs" {{action "changeRange" 0.25}}>6 hours</button> 
+<button class="btn btn-default btn-xs" {{action "changeRange" 0.5}}>12 hours</button> 
+<button class="btn btn-default btn-xs" {{action "changeRange" 1}}>1 day</button> 
+<button class="btn btn-default btn-xs" {{action "changeRange" 2}}>2 days</button> 
+<button class="btn btn-default btn-xs" {{action "changeRange" 3}}>3 days</button> 
+<button class="btn btn-default btn-xs" {{action "changeRange" 5}}>5 days</button> 
+<button class="btn btn-default btn-xs" {{action "changeRange" 7}}>7 month</button> 
+<em>current range: {{range}}</em>
+
+<br/>
+
+<div class="row">
+  <div class="col-md-4 col-xs-12">
+    {{render "temperatures" temperatures}}
+  </div>
+  <div class="col-md-4 col-xs-12">
+    {{render "moistures" moistures}}
+  </div>
+  <div class="col-md-4 col-xs-12">
+    {{render "lights" lights}}
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "name": "Margareth",
+  "description": "Arduino + Raspberry plant monitoring simple prototype",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "express": "3.x",
+    "nodemon": "~1.0.13",
+    "serialport": "1.6.3"
+  }
+}

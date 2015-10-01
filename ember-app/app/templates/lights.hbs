@@ -1,0 +1,31 @@
+{{line-chart data=filteredContent chartClassName="lights-chart"}}
+
+<div class="chart-data-title">
+  <div class="row">
+    <div class="col-xs-6">
+      {{current-value model=lastEntrie unit="lux" title="Light"}}
+    </div>
+    <div class="col-xs-6 align-right">
+      {{svg-icon class="dashboard-icon icon-sun2"}}
+    </div>
+  </div>
+</div>
+
+<div class="chart-data-block">
+  <div class="chart-data-block-wraper">
+    {{#dashboard-table}}
+      <tbody>
+      {{#each tenLastFilteredContent as |light|}}
+        <tr>
+          <td>{{light.value}} lux</td>
+          <td>{{format-date-twitter light.time}}</td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan="2">No data to display.</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    {{/dashboard-table}}
+  </div>
+</div>

@@ -1,0 +1,73 @@
+.axis path,
+.axis line {
+  fill:none;
+  stroke:white;
+  shape-rendering:crispEdges;
+}
+
+text {
+  text-anchor:end;
+  font-size:11px;
+  fill:white;
+  text-shadow:1px 1px 0px darken(#73dacf,20%);
+}
+
+.axis.x path {
+  stroke-width:1;
+}
+.axis.x .tick line {
+  opacity:0;
+}
+
+.axis.y .tick {
+  line { opacity:.75; }
+}
+.axis.y .tick:first-child {
+  opacity: 0 !important;
+}
+.axis.y path {
+  stroke-width:0;
+}
+
+.grid .tick {
+  stroke:lightgrey;
+  opacity:.7;
+}
+.grid path {
+  stroke-width:0;
+}
+
+.bar { fill:aqua; }
+.bar:hover { fill:steelblue; }
+
+.area {
+  // fill:steelblue;
+  fill:url(#area-gradient);
+  fill-opacity:.8;
+  stroke-width:05px;
+}
+
+.line {
+  fill:none;
+//  stroke:steelblue;
+  stroke:white;
+  stroke-width:2px;
+}
+
+.line.gradient {
+  stroke:url(#moisture-gradient);
+}
+
+.point {
+  cursor:pointer;
+  fill:steelblue;
+  stroke-width:2px;
+  stroke:white;
+}
+
+.d3-tip {
+  padding:4px 8px;
+  line-height:normal; font-size:12px; color:#fff;
+  background:rgba(0,0,0,.8); border-radius:4px;
+  transition:opacity .3s ease;
+}

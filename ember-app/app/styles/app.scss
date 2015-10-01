@@ -1,0 +1,13 @@
+@import "gui/dashboard";
+@import "gui/d3";
+@import "gui/icons";
+
+.align-left { text-align:left; }
+.align-right { text-align:right; }
+.align-center { text-align:center; }
+.row-no-padding {
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
