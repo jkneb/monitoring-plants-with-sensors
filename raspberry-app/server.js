@@ -16,17 +16,17 @@ var serialport = require('serialport');
 var SerialPort = serialport.SerialPort;
 
 var port = '/dev/ttyACM0';
-//var port = '/dev/tty-usbserial1';
-//var port = '/dev/cu.usbmodem1411';
-//var port = '/dev/cu.Bluetooth-Incoming-Port';
 
-// serialport.list(function (err, ports) {
-//   ports.forEach(function(port) {
-//     console.log(port.comName);
-//     console.log(port.pnpId);
-//     console.log(port.manufacturer);
-//   });
-// });
+// uncomment this to list all the ports if you have trouble to find yours
+/*
+serialport.list(function (err, ports) {
+ ports.forEach(function(port) {
+   console.log(port.comName);
+   console.log(port.pnpId);
+   console.log(port.manufacturer);
+ });
+});
+*/
 
 var sp = new SerialPort(port, {
   parser: serialport.parsers.readline("\n")
@@ -36,8 +36,10 @@ var moisture,
     temperature,
     light;
 
+var postInterval = 300000; // in milliseconds so 300000 is 5 minutes
+
 var APIOptions = {
-  host: 'margareth-api.herokuapp.com',
+  host: 'your-heroku-api.herokuapp.com', // provide your own API url here
   port: 80,
   path: '',
   headers: {"Accept":"application/json", "Content-Type":"application/json"},
@@ -63,7 +65,7 @@ function postToAPI(endpoint, body){
 
 sp.on('data', function(data) {
   console.log(data);
-  var datum = data.split('|');
+  var datum = data.replace(/^\s+|\s+$/g, '').split('|');
   console.log(datum);
   moisture = datum[0];
   temperature = datum[1];
@@ -74,7 +76,7 @@ setInterval(function(){
   postToAPI('/api/moistures', {"moisture":{"value":moisture || 0}});
   postToAPI('/api/temperatures', {"temperature":{"value":temperature || 0}});
   postToAPI('/api/lights', {"light":{"value":light || 0}});
-}, 60000);
+}, postInterval);
 
 
 

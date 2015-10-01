@@ -7,6 +7,11 @@ First you'll problably need to configure your local development database url, do
 I provided some commands which I found useful to create/modify tables, rows, etc. Especially the last one if Heroku warns you that your quota is almost exceeded and that they will revoke your rights on the database ;)
 
 
+## Installation
+
+* `cd` into this directory
+* run `node server.js`
+
 ## Heroku Useful Commands
 
 After `cd` into your app directory.
