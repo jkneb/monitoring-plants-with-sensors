@@ -1,6 +1,7 @@
 # Ember.js App
 
-
+This is an Ember app.  
+Follow the instructions bellow for the installation.
 
 ## Prerequisites
 
@@ -14,8 +15,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* change into the new directory
+* cd into this directory
 * `npm install`
 * `bower install`
 
@@ -24,9 +24,18 @@ You will need the following things properly installed on your computer.
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
+### Configure
 
-Make use of the many generators for code, try `ember help generate` for more details
+These steps needs to be configured in order to make the app actually work.
+
+* in `config/environment.js` go into the `contentSecurityPolicy` object and in `'connect-src'` add the other domains with which your app needs to communicate. For instance, in my case I added my production API url (an Heroku app) and also my local developmenet API URL which was http://localhost:5000/api/. 
+So mine was looking like this: 
+```
+...
+'connect-src': "'self' http://localhost:5000/api/ http://my-heroku-api.herokuapp.com/api/"
+...
+```
+* in `app/models`, you need to provide your API's urls so each model is actually able to retrieve data. For instance the `light.js` file which defines the `Light` model performs a `getJSON` which should point to **your own Heroku app url**. Do the same for the other models.
 
 ### Running Tests
 
@@ -40,7 +49,8 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+Deploy with Heroku it's super simple and free ;)  
+[http://www.ember-cli.com/user-guide/#deployments](http://www.ember-cli.com/user-guide/#deployments)
 
 ## Further Reading / Useful Links
 

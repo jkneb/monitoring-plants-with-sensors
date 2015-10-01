@@ -8,7 +8,8 @@ var Moisture = Ember.Object.extend({
 Moisture.reopenClass({
   findAll() {
     return new Ember.RSVP.Promise((resolve, reject) => {
-      Ember.$.getJSON('http://margareth-api.herokuapp.com/api/moistures')
+      // provide your own API URL here
+      Ember.$.getJSON('http://your-heroku-api.herokuapp.com/api/moistures')
         .then((res) => resolve(res.moistures.map((item) => Moisture.create(item))))
         .fail((err) => reject(err));
     });

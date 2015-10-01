@@ -15,7 +15,7 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'img-src': "'self' secure.gravatar.com data:",
       'style-src': "'self' 'unsafe-inline'",
-      'connect-src': "'self' http://localhost:5000/api/ http://margareth-api.herokuapp.com/api/"
+      'connect-src': "'self'"
     },
     APP: {
       // Here you can pass flags/options to your application instance

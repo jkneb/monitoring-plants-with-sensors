@@ -1,7 +1,7 @@
 {
-  "name": "planterz",
+  "name": "Monitoring Plants With Sensors",
   "version": "0.0.0",
-  "description": "Small description for planterz goes here",
+  "description": "",
   "private": true,
   "directories": {
     "doc": "doc",
