@@ -1,8 +1,13 @@
-## Heroku app - Our API
+## Heroku App - Our API
 
+This is the API app that I deployed to Heroku. It is connected to a PostgreSQL database which I activated also on Heroku. 
+
+I provided some commands which I found useful to create/modify tables, rows, etc. Especially the last one if Heroku warns you that your quota is almost exceeded and that they will revoke your rights on the database ;)
 
 
 ## Heroku Useful Commands
+
+After `cd` into your app directory.
 
 #### Add a PostgreSQL database
 ```
@@ -22,6 +27,8 @@ heroku pg:psql
 
 ## PSQL Useful Commands
 
+Type those commandes after having logged into the database with the `psql` command.
+
 #### Create database
 
 ```
@@ -39,8 +46,7 @@ CREATE TABLE temperatures (
 
 #### POST moisture
 ```
-INSERT INTO moistures (percent) 
-values (50);
+INSERT INTO moistures (percent) values (50);
 ```
 
 #### GET moistures
