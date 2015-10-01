@@ -12,19 +12,19 @@ void loop() {
 
   tempVal = analogRead(A1);
   float voltage = (tempVal / 1024.0) * 5.0; // maps from 0-1024 ADC to 0-5 Volts
-  float temperature = (voltage - .5) * 100 + 2; // wtf
+  float temperature = (voltage - .5) * 100 + 2;
 
   LDRVal = analogRead(A2);
   int light = LDRVal;
-  
+
   Serial.print(humidity);
   // Serial.println(" % Humidity");
   Serial.print("|");
-  
+
   Serial.print(temperature);
   // Serial.println(" C");
   Serial.print("|");
-  
+
   Serial.print(light);
   /*Serial.print(" LUX ");
   if (LDRVal < 10) {
@@ -38,7 +38,7 @@ void loop() {
   } else {
     Serial.println("- Very bright");
   }*/
-  
+
   Serial.println();
   delay(2000);
 }
