@@ -1,5 +1,6 @@
-This is the Margareth API.  
-[http://margareth-api.herokuapp.com](margareth-api.herokuapp.com)
+## Heroku app - Our API
+
+
 
 ## Heroku Useful Commands
 
@@ -31,7 +32,7 @@ CREATE DATABASE moistures;
 ```
 CREATE TABLE temperatures (
   id serial PRIMARY KEY,
-  value int,
+  value real,
   time timestamp with time zone default current_timestamp
 );
 ```
