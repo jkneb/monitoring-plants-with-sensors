@@ -56,7 +56,7 @@ CREATE TABLE temperatures (
 
 #### POST moisture
 ```
-INSERT INTO moistures (percent) values (50);
+INSERT INTO moistures (value) values (50);
 ```
 
 #### GET moistures
@@ -76,7 +76,7 @@ DELETE FROM moistures WHERE id=1;
 
 #### Renaming a column
 ```
-ALTER TABLE moistures RENAME COLUMN percent TO value;
+ALTER TABLE moistures RENAME COLUMN value TO anything;
 ```
 
 #### Changing column data type
