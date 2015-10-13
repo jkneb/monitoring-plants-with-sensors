@@ -12,7 +12,7 @@ app.set('port', (process.env.PORT || 5000));
 
 var pg = require('pg');
 // provide your own local development database here if needed (probably needed)
-var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/margareth2';
+var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/your-db-name';
 console.log('NODE_ENV', process.env.NODE_ENV);
 console.log('DATABASE_URL', process.env.DATABASE_URL);
 
