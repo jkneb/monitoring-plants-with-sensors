@@ -42,49 +42,51 @@ Type those commandes after having logged into the database with the `psql` comma
 #### Create database
 
 ```
-CREATE DATABASE moistures;
+CREATE DATABASE yourdatabase;
 ```
 
 #### Create table
 ```
-CREATE TABLE temperatures (
+CREATE TABLE measures (
   id serial PRIMARY KEY,
-  value real,
+  moisture real,
+  temperature real,
+  light real,
   time timestamp with time zone default current_timestamp
 );
 ```
 
-#### POST moisture
+#### POST measure
 ```
-INSERT INTO moistures (value) values (50);
-```
-
-#### GET moistures
-```
-SELECT * FROM moistures;
+INSERT INTO measures (moisture, temperature, light) values (50, 23.5, 600);
 ```
 
-#### PUT moisture
+#### GET measures
 ```
-UPDATE moistures SET value=49 WHERE id=1;
+SELECT * FROM measures;
 ```
 
-#### DELETE moisture
+#### PUT/update measure
 ```
-DELETE FROM moistures WHERE id=1;
+UPDATE measures SET moisture=49 WHERE id=1;
+```
+
+#### DELETE measure
+```
+DELETE FROM measures WHERE id=1;
 ```
 
 #### Renaming a column
 ```
-ALTER TABLE moistures RENAME COLUMN value TO anything;
+ALTER TABLE measures RENAME COLUMN value TO anything;
 ```
 
 #### Changing column data type
 ```
-ALTER TABLE temperatures ALTER COLUMN value TYPE real;
+ALTER TABLE measures ALTER COLUMN temperature TYPE real;
 ```
 
 #### Deleting old entries before a certain date
 ```
-DELETE FROM moistures WHERE time < ‘2015-09-19 23:30:00’;
+DELETE FROM measures WHERE time < ‘2015-09-19 23:30:00’;
 ```

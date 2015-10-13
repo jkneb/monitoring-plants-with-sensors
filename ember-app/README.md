@@ -38,7 +38,7 @@ So, mine is looking like this:
 'connect-src': "'self' http://localhost:5000/api/ http://my-heroku-api.herokuapp.com/api/"
 ...
 ```
-* in `app/models`, you need to provide your API's urls so each model is actually able to retrieve data. For instance the `light.js` file which defines the `Light` model performs a `getJSON` which should point to **your own Heroku app url**. Do the same for the other models.
+* in `app/models/measure`, you need to provide your API's url so the model is actually able to retrieve data from your API.
 
 ### Running Tests
 

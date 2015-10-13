@@ -32,10 +32,11 @@ var sp = new SerialPort(port, {
   parser: serialport.parsers.readline("\n")
 });
 
-var moisture,
-    temperature,
-    light;
-
+var measure = {
+  moisture: null,
+  temperature: null,
+  light: null
+};
 var postInterval = 300000; // in milliseconds so 300000 is 5 minutes
 
 var APIOptions = {
@@ -66,19 +67,21 @@ function postToAPI(endpoint, body){
 sp.on('data', function(data) {
   console.log(data);
   var datum = data.replace(/^\s+|\s+$/g, '').split('|');
-  console.log(datum);
-  moisture = datum[0];
-  temperature = datum[1];
-  light = datum[2];
+  // console.log(datum);
+  measure.moisture = datum[0];
+  measure.temperature = datum[1];
+  measure.light = datum[2];
 });
 
 setInterval(function(){
-  postToAPI('/api/moistures', {"moisture":{"value":moisture || 0}});
-  postToAPI('/api/temperatures', {"temperature":{"value":temperature || 0}});
-  postToAPI('/api/lights', {"light":{"value":light || 0}});
+  postToAPI('/api/measures', {
+    "measure": {
+      "moisture": measure.moisture || 0,
+      "temperature": measure.temperature || 0,
+      "light": measure.light || 0
+    }
+  });
 }, postInterval);
-
-
 
 var port = process.env.PORT || 5000;
 server.listen(port, function(){
